@@ -23,6 +23,16 @@ function firstReverse(str){
  * @return {string} in alphabetical order
  * ie: "cake" => "acek"
  */
+function alphaOrder(str){
+    if (typeof str === 'string'){
+        return str.split('').sort().join('');
+    }else{
+        return null;
+    }
+}
+// str.split('') = ['c', 'a', 'k', 'e'];
+// str.sort() = ['a', 'c', 'e', 'k'];
+// str.join('') = ['acek'];
 
  /** Function: vowelCount
  * The function will take the str parameter being passed in and
@@ -67,7 +77,7 @@ function firstReverse(str){
 
 module.exports = {
     firstReverse: firstReverse,
-    alphaOrder: null,
+    alphaOrder: alphaOrder,
     vowelCount: null,
     timeConvert: null,
     repeatString: null,
