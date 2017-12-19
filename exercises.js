@@ -43,19 +43,18 @@ function alphaOrder(str){
  */
 function vowelCount(str){
 if (typeof str === 'string'){
-    var strArr = str.toLowerCase().split('');
-    var count = 0;
+    var num = 0;
         for (var i = 0; i < str.length; i++){
-            if (strArr[i] === 'a' ||
-                strArr[i] === 'e' ||
-                strArr[i] === 'i' ||
-                strArr[i] === 'o' ||
-                strArr[i] === 'u' 
+            if (str[i] === 'a' ||
+                str[i] === 'e' ||
+                str[i] === 'i' ||
+                str[i] === 'o' ||
+                str[i] === 'u' 
             ){
-                count++;
+                num++;
             }
         }
-        return count;
+        return num;
     }else{
         return null;
     }
@@ -69,6 +68,15 @@ if (typeof str === 'string'){
  * @return {string} as hours:minutes
  * ie: 68 => 1:8
  */
+function timeConvert(str){
+    if (typeof str === 'number'){
+        var hours = Math.floor(str / 60);
+        var minutes = str % 60; 
+            return hours + ":" + minutes;
+    }else{
+        return null;
+    }
+}
 
  /** Function: repeatString
  * The function will take in two parameters and repeat a given string (first argument)
@@ -98,6 +106,6 @@ module.exports = {
     firstReverse: firstReverse,
     alphaOrder: alphaOrder,
     vowelCount: vowelCount,
-    timeConvert: null,
+    timeConvert: timeConvert,
     repeatString: null,
 };
