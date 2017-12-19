@@ -86,7 +86,13 @@ function timeConvert(str){
  * @return {string} repeated num times
  * i.e repeatString("money", 3) => "moneymoneymoney".
  */
-
+function repeatString(str, num){
+    if (typeof str === 'string' && typeof num === 'number'){
+        return str.repeat(num);
+    }else{
+        return null;
+    }
+}
 
 /**
  * Below here we see a module.exports which is set to an object with a bunch of keys.
@@ -107,5 +113,5 @@ module.exports = {
     alphaOrder: alphaOrder,
     vowelCount: vowelCount,
     timeConvert: timeConvert,
-    repeatString: null,
+    repeatString: repeatString,
 };
